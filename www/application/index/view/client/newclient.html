@@ -1,0 +1,40 @@
+{extend name='common@template:frame'/}
+{block name="body"}
+<div class="panel panel-default">
+	<div class="panel-body">
+		<form>
+			<div class="form-group">
+				<label for="recipient-name" class="control-label">客户名称:</label>
+				<input type="text" class="form-control" id="recipient-name">
+			</div>
+			<div class="form-group">
+				<label class="control-label">客户电话1</label>
+				<input class="form-control" type="text" id="client-phone1"/>
+			</div>
+			<div class="form-group">
+				<label class="control-label">客户电话2</label>
+				<input class="form-control" type="text" id="client-phone2"/>
+			</div>
+			<div class="form-group">
+				<label class="control-label">客户电话3</label>
+				<input class="form-control" type="text" id="client-phone3"/>
+			</div>
+			<div class="form-group">
+				<label for="message-text" class="control-label">客户所在地:</label>
+				<div id="client-district"></div>
+			</div>
+			<div class="form-group">
+				<label class="control-label">客户地址</label>
+				<input class="form-control" type="text" id="client-address"/>
+			</div>
+			<div class="form-group">
+				<label class="control-label">客户楼盘</label>
+				<input class="form-control" type="text" id="client-building"/>
+			</div>
+		</form>
+	</div>
+</div>
+<div class="panel-footer">
+	<a class="btn btn-primary btn-block" onclick="iframe_modal_close()">保存</a>
+</div>
+{/block}

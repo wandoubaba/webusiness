@@ -1,0 +1,76 @@
+{extend name='common@template:index'/}
+
+{block name="main-title"}
+客户
+<small></small>
+{/block}
+
+{block name="bread-nav"}
+<li class="active">客户</li>
+{/block}
+
+{block name="main-content"}
+<!-- search form -->
+<form action="#" method="get" class="">
+	<div class="input-group">
+		<input type="text" name="q" class="form-control" placeholder="查询">
+		<span class="input-group-btn">
+			<button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+			</button>
+		</span>
+	</div>
+</form>
+<!-- /.search form -->
+<!-- button group -->
+<div class="mt-2 mb-2">
+	<a href="#" id="new-client-button" data-toggle="modal" data-target="#new-client-modal" class="btn btn-success btn-block">新建客户</a>
+</div>
+<!-- /.button group -->
+<!-- list group -->
+<ul class="list-group">
+	<!-- start list group item -->
+	<a href="follow.html" class="list-group-item">
+		<span class="badge">新</span>
+		<div data-target="#item-controller1">
+			<h4>
+				中海康城 张先生
+				<small><i class="fa fa-clock-o"></i> 2019-5-10 15:31:22</small>
+			</h4>
+			<p>客户备注信息</p>
+		</div>
+	</a>
+	<!-- end list group item -->
+</ul>
+<!-- /.list group -->
+<div class="modal fade" id="new-client-modal">
+	<div class="modal-dialog" >
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title">新建客户</h4>
+			</div>
+			<div class="modal-body">
+				<iframe id="new-client-modal-frame" width="100%" frameborder="0"></iframe>
+			</div>
+		</div>
+	</div>
+</div>
+{/block}
+{block name="css"}
+<style type="text/css" media="screen">
+	
+</style>
+{/block}
+{block name="script"}
+<script type="text/javascript">
+	$(function() {
+		$('#new-client-modal').on('show.bs.modal', function (e) {
+			var url = "{:url('index/client/newclient')}";
+			$("#new-client-modal-frame").attr("src",url)
+				.on("load",function() {
+					iframe_height_fix($(this));
+	  			}); 
+		});
+	});
+</script>
+{/block}
