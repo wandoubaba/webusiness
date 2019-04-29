@@ -1,0 +1,38 @@
+
+<div class="modal-header box-header with-border">
+	<button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">&times;</span></button>
+	<h4 class="modal-title" id="exampleModalLabel">客户跟进</h4>
+</div>
+<div class="modal-body">
+	
+	<form>
+		<div class="form-group">
+			<label for="recipient-name" class="control-label">客户名称:</label>
+			<input type="text" class="form-control" id="recipient-name">
+		</div>
+		<div class="form-group">
+			<label class="control-label">跟进时间</label>
+			<div class="input-group date form_datetime col-md-5" id="follow-datetime" data-link-field="follow-datetime-hidden">
+                <input class="form-control" type="text" value="" readonly>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+            </div>
+			<input type="hidden" id="follow-datetime-hidden" value="" />
+		</div>
+		<div class="form-group">
+			<label class="control-label">跟进内容</label>
+			<textarea name="follow-content" class="form-control" rows="10" placeholder="跟进内容"></textarea>
+		</div>
+	</form>
+</div>
+<div class="modal-footer">
+	<a class="btn btn-default pull-left" data-dismiss="modal">取消</a>
+	<a class="btn btn-primary" data-dismiss="modal">保存</a>
+</div>
+<script type="text/javascript">
+	$("#follow-datetime").datetimepicker({
+        language: 'zh-CN',
+        format: 'yyyy-mm-dd hh:ii',
+        todayBtn: true,
+        pickerPosition: "bottom-left"
+	});
+</script>
