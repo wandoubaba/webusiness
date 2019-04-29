@@ -1,6 +1,5 @@
-<Files ".env">
-    Require all denied
-</Files>
-<Files ".git*">
-    Require all denied
-</Files>
+<FilesMatch ".(env|ht*|ini|phps|fla|psd|log|sh)$">
+Order Allow,Deny
+Deny from all
+</FilesMatch>
+Options All -Indexes
