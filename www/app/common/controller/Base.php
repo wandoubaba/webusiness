@@ -11,6 +11,8 @@ class Base extends Controller
 	{
 		// 继承父类的_initialize()方法
 		parent::_initialize();
+		$this->view->assign('title','领象智能');
+        $this->view->assign('minititle','领象');
 	}
 
 	/**

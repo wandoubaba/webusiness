@@ -1,0 +1,215 @@
+{extend name='common@template:index'/}
+{block name="main-title"}
+{$pagetitle|default=""}
+<small></small>
+{/block}
+
+{block name="bread-nav"}
+<li><a href="{:url('index/client/index')}">客户</a></li>
+{/block}
+{block name="main-content"}
+<div>
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    	<a href="#info" class="btn btn-default btn-lg" aria-controls="info" role="tab" data-toggle="tab">资料</a>
+    </li>
+    <li role="presentation">
+    	<a href="#follow" class="btn btn-default btn-lg" aria-controls="follow" role="tab" data-toggle="tab">跟进</a>
+    </li>
+    <li role="presentation">
+    	<a href="#report" class="btn btn-default btn-lg" aria-controls="report" role="tab" data-toggle="tab">报单</a>
+    </li>
+    <li role="presentation">
+    	<a href="#deal" class="btn btn-default btn-lg" aria-controls="deal" role="tab" data-toggle="tab">成交</a>
+    </li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="info">
+	    <!-- 客户资料 -->
+	     <div class="panel panel-default">
+	     	<div class="panel-body">
+	     		<ul class="list-group">
+	     			<li class="list-group-item">
+	     				<div>客户名称：</div>
+	     				<h4>张先生</h4>
+	     			</li>
+	     			<li class="list-group-item">
+	     				<span class="badge"><span class="fa fa-phone"></span></span>
+	     				<div>客户电话1：</div>
+	     				<h4>177****8899</h4>
+	     			</li>
+	     			<li class="list-group-item">
+	     				<span class="badge"><span class="fa fa-phone"></span></span>
+	     				<div>客户电话2：</div>
+	     				<h4>177****8855</h4>
+	     			</li>
+	     			<li class="list-group-item">
+	     				<span class="badge"><span class="fa fa-phone"></span></span>
+	     				<div>客户电话3：</div>
+	     				<h4>177****8811</h4>
+	     			</li>
+	     			<li class="list-group-item">
+	     				<div>客户所在地：</div>
+	     				<h4>辽宁省 沈阳市 和平区</h4>
+	     			</li>
+	     			<li class="list-group-item">
+	     				<div>客户地址：</div>
+	     				<h4>青年北大街54号5号楼2-6-2</h4>
+	     			</li>
+	     			<li class="list-group-item">
+	     				<div>客户楼盘：</div>
+	     				<h4>中海康城</h4>
+	     			</li>
+	     			<li class="list-group-item">
+	     				<div>备注：</div>
+	     				<h4>这是一个测试的数据</h4>
+	     			</li>
+	     		</ul>
+	     	</div>
+	     </div>
+	</div>
+    <div role="tabpanel" class="tab-pane" id="follow">
+		<!-- search form -->
+		<form action="#" method="get" class="">
+			<div class="input-group">
+				<input type="text" name="q" class="form-control" placeholder="查询">
+				<span class="input-group-btn">
+					<button type="submit" name="search" id="search-btn" class="btn btn-flat">
+						<i class="fa fa-search"></i>
+					</button>
+				</span>
+			</div>
+		</form>
+		<!-- /.search form -->
+		<div class="mt-2 mb-2">
+			<a href="#" id="new-follow-button" class="btn btn-primary btn-block">新建跟进</a>
+		</div>
+		<!-- /.button group -->
+		<!-- time line -->
+		<ul class="timeline">
+
+		    <!-- timeline time label -->
+		    <li class="time-label">
+		        <span class="bg-green">
+		            中海康城 张先生 177****8899
+		        </span>
+		    </li>
+		    <!-- /.timeline-label -->
+
+		    <!-- timeline item -->
+		    <li>
+		        <!-- timeline icon -->
+		        <i class="fa fa-automobile bg-blue"></i>
+		        <!-- timeline item content -->
+	        	<div class="timeline-item">
+	        		<span class="time">跟进人员</span>
+
+	        		<h3 class="timeline-header"><i class="fa fa-clock-o"></i> 2019-5-19 12:05</h3>
+
+	        		<div class="timeline-body">
+	        			跟进详细记录跟进详细记录跟进详细记录跟进详细记录跟进详细记录跟进详细记录
+	        			...
+	        		</div>
+	        	</div>
+	        	<!-- /.timeline item content -->
+		    </li>
+		    <!-- /.timeline item -->
+		    <!-- timeline item -->
+		    <li>
+		        <!-- timeline icon -->
+		        <i class="fa fa-phone bg-blue"></i>
+		        <!-- timeline item content -->
+	        	<div class="timeline-item">
+	        		<span class="time">跟进人员</span>
+
+	        		<h3 class="timeline-header"><i class="fa fa-clock-o"></i> 2019-5-19 10:08</h3>
+
+	        		<div class="timeline-body">
+	        			跟进详细记录跟进详细记录跟进详细记录跟进详细记录跟进详细记录跟进详细记录
+	        			...
+	        		</div>
+	        	</div>
+	        	<!-- /.timeline item content -->
+		    </li>
+		    <!-- /.timeline item -->
+		    <!-- timeline item -->
+		    <li>
+		        <!-- timeline icon -->
+		        <i class="fa fa-weixin bg-blue"></i>
+		        <!-- timeline item content -->
+	        	<div class="timeline-item">
+	        		<span class="time">跟进人员</span>
+
+	        		<h3 class="timeline-header"><i class="fa fa-clock-o"></i> 2019-5-10 13:18</h3>
+
+	        		<div class="timeline-body">
+	        			跟进详细记录跟进详细记录跟进详细记录跟进详细记录跟进详细记录跟进详细记录
+	        			...
+	        		</div>
+	        	</div>
+	        	<!-- /.timeline item content -->
+		    </li>
+		    <!-- /.timeline item -->
+		    <!-- timeline item -->
+		    <li>
+		        <!-- timeline icon -->
+		        <i class="fa fa-coffee bg-blue"></i>
+		        <!-- timeline item content -->
+	        	<div class="timeline-item">
+	        		<span class="time">跟进人员</span>
+
+	        		<h3 class="timeline-header"><i class="fa fa-clock-o"></i> 2019-5-8 18:12</h3>
+
+	        		<div class="timeline-body">
+	        			跟进详细记录跟进详细记录跟进详细记录跟进详细记录跟进详细记录跟进详细记录
+	        			...
+	        		</div>
+	        	</div>
+	        	<!-- /.timeline item content -->
+		    </li>
+		    <!-- /.timeline item -->
+
+		</ul>
+		<!-- /.time line -->
+    </div>
+    <div role="tabpanel" class="tab-pane" id="report">
+		<!-- button group -->
+		
+    </div>
+    <div role="tabpanel" class="tab-pane" id="deal">
+    	交易
+    </div>
+  </div>
+
+</div>
+{/block}
+{block name="css"}
+<style type="text/css" media="screen">
+	
+</style>
+{/block}
+{block name="script"}
+<script type="text/javascript">
+	$(function() {
+		$(".timeline-item").each(function() {
+			var html = "<div class=\"page-header\"><h4>跟进人员<br/><small>[记录时间]</small></h4></div>";
+			html+="<div><b>详细</b>的跟进内容全文详细的跟进内容全文详细的跟进内容全文详细的跟进内容全文详细的跟进内容全文详细的跟进内容全文详细的跟进内容全文</div>";
+			$(this).on("click",function() {
+				layer.open({
+					content: html,
+					btn: "关闭"
+				});
+
+			});
+		});
+
+		$("#new-follow-button").on("click",function() {
+			modal_show_iframe("新建跟进", "{:url('index/client/newfollow')}", 60);
+		});
+	});
+</script>
+{/block}

@@ -41,7 +41,7 @@
 			text_key: "district_name",
 			span_css: "",	// 如果要在select外层包一层span则定义span的css样式名称，如h-ui的span_css: "select-box"
 			select_style: "",	// 要对select使用的style
-			required: true,	// 配合jquery.validation的required属性
+			required: 1,	// 配合jquery.validation的required属性
 		}
 		// 合并参数
 		if(options) {

@@ -69,17 +69,17 @@
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
-        <h1>
+        <h1 class="hidden-xs hidden-sm">
           {block name="main-title"}
           后台标题
           <small>副标题</small>
           {/block}
         </h1>
         <ol class="breadcrumb">
-          <li><a href="index.html"><i class="fa fa-dashboard"></i> 首页</a></li>
+          <li><a href="{:url('index/index/index')}"><i class="fa fa-dashboard"></i> 首页</a></li>
           {block name="bread-nav"}
-          <li class="active">模板页</li>
           {/block}
+          <li class="active">{$pagetitle|default=""}</li>
         </ol>
       </section>
 

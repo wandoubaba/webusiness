@@ -2,12 +2,12 @@
 
 
 {block name="main-title"}
-后台标题
-<small>副标题</small>
+{$pagetitle|default=""}
+<small></small>
 {/block}
 
 {block name="main-content"}
-<!-- 页面内容写这里 -->
+  <a class="btn btn-default btn-block btn-lg" href="{:url('index/client/index')}">客户模块演示</a>
 {/block}
 
 {block name="script"}

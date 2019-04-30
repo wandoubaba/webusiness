@@ -1,0 +1,65 @@
+{extend name='common@template:frame'/}
+{block name="body"}
+<div class="panel panel-default">
+	<form>
+		<div class="panel-body">
+			<div class="form-group">
+				<label class="control-label">客户:</label>
+				中海康城 张先生 177****8899
+			</div>
+			<div class="form-group">
+				<label class="control-label">跟进时间</label>
+				<input class="form-control" type="text" id="follow-time"/>
+			</div>
+			<div class="form-group">
+				<label class="control-label">跟进方式</label>
+				<div>
+	                <label class="mr-4">
+	                  <input type="radio" name="follow-method" class="flat-green">
+	                  <i class="fa fa-phone fa-fw"></i>电话
+	                </label>
+	                <label class="mr-4">
+	                  <input type="radio" name="follow-method" class="flat-green">
+	                  <i class="fa fa-weixin fa-fw"></i>微信
+	                </label>
+	                <label class="mr-4">
+	                  <input type="radio" name="follow-method" class="flat-green">
+	                  <i class="fa fa-car fa-fw"></i>上门
+	                </label>
+	                <label class="mr-4">
+	                  <input type="radio" name="follow-method" class="flat-green">
+	                  <i class="fa fa-coffee fa-fw fa-fw"></i>来访
+	                </label>
+	                <label class="mr-4">
+	                  <input type="radio" name="follow-method" class="flat-green">
+	                  <i class="fa fa-envelope fa-fw"></i>邮件
+	                </label>
+	                <label class="mr-4">
+	                  <input type="radio" name="follow-method" class="flat-green">
+	                  <i class="fa fa-ellipsis-h fa-fw"></i>其他
+	                </label>
+	            </div>
+			</div>
+			<div class="form-group">
+				<label class="controll-label">跟进记录</label>
+				<textarea class="form-control" type="text" id="follow-content" rows="5"></textarea>
+			</div>
+		</div>
+		<div class="panel-footer">
+			<a class="btn btn-primary btn-block" onclick="iframe_modal_close()">保存</a>
+		</div>
+	</form>
+</div>
+{/block}
+{block name="script"}
+
+<script type="text/javascript">
+	$(function() {
+	    //Flat green color scheme for iCheck
+	    $('input[type="checkbox"].flat-green, input[type="radio"].flat-green').iCheck({
+	    	checkboxClass: 'icheckbox_flat-green',
+	    	radioClass   : 'iradio_flat-green'
+	    });
+	});
+</script>
+{/block}

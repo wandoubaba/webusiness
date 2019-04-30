@@ -1,8 +1,8 @@
 {extend name='common@template:frame'/}
 {block name="body"}
 <div class="panel panel-default">
-	<div class="panel-body">
-		<form class="form-inline">
+	<form>
+		<div class="panel-body">
 			<div class="form-group">
 				<label for="recipient-name" class="control-label">客户名称:</label>
 				<input type="text" class="form-control" id="recipient-name">
@@ -31,11 +31,15 @@
 				<label class="control-label">客户楼盘</label>
 				<input class="form-control" type="text" id="client-building"/>
 			</div>
-		</form>
-	</div>
-</div>
-<div class="panel-footer">
-	<a class="btn btn-primary btn-block" onclick="iframe_modal_close()">保存</a>
+			<div class="form-group">
+				<label class="controll-label">备注</label>
+				<textarea class="form-control" type="text" id="client-memo"></textarea>
+			</div>
+		</div>
+		<div class="panel-footer">
+			<a class="btn btn-primary btn-block" onclick="iframe_modal_close()">保存</a>
+		</div>
+	</form>
 </div>
 {/block}
 {block name="script"}
@@ -43,7 +47,7 @@
 <script type="text/javascript">
 	$(function() {
 		$("#client-district").linkage({
-			url:"{:url('api/district/list')}",
+			url:"{:url('api/district/getlist')}",
 			value_key:"district_id",
 			text_key:"district_name",
 			root_father:"86",
@@ -51,8 +55,7 @@
 			default_values:['210000','210100'],
 			select_css:"form-control",
 			select_style:"border-radius:3px",
-			required: true,	
-			// span_css:"col-xs-7 col-sm-4 col-md-3 col-lg-2",
+			required: 1,
 		});
 	});
 </script>
