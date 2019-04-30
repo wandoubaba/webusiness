@@ -36,10 +36,12 @@
 			father_keyname: "father_id",	// 查询时父ID参数对应的键名，默认为father_id
 			level: -1,	// 加载级别，小于等0表示加载到底
 			select_css: "form-control",	// 样式名称，默认为bootstrap的form-control
-			container_css: "form-inline",	// 容器样式名称，默认为bootstrap的form-inline
+			container_css: "",	// 容器样式名称，比如bootstrap的form-inline
 			value_key: "district_id",	// <option value="id">name</option>
 			text_key: "district_name",
 			span_css: "",	// 如果要在select外层包一层span则定义span的css样式名称，如h-ui的span_css: "select-box"
+			select_style: "",	// 要对select使用的style
+			required: true,	// 配合jquery.validation的required属性
 		}
 		// 合并参数
 		if(options) {
@@ -83,7 +85,10 @@
 					&& father_id!="-1") {
 					// 创建select对象，并将select对象放入container内
 					var _select = $("<select></select>");
-					// 如果father_id为空，则_fid值为86
+					// 为_select应用style属性
+					_select.attr("style", settings.select_style);
+					// 为_select添加required属性
+					if(settings.required) {_select.attr("required",true);}
 					var _fid = father_id;
 					var param = {};
 					_key = settings.father_keyname;

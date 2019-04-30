@@ -1,3 +1,5 @@
+/* 项目自定义js */
+
 // iframe高度自适应
 function iframe_height_fix(iframe_obj) {
 	$(iframe_obj).height(0);
