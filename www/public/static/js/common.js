@@ -2,9 +2,12 @@
 
 // iframe高度自适应
 function iframe_height_fix(iframe_obj, plus) {
-	$(iframe_obj).height(0);
-	var mainheight = $(iframe_obj).contents().find("body").height()+plus;
-	$(iframe_obj).height(mainheight);
+	iframe_obj.on("load",function() {
+		iframe_obj.height(0);
+		var mainheight = iframe_obj.contents().find("body").height();
+		mainheight = mainheight==0 ? 400 : mainheight;
+		iframe_obj.height(mainheight+plus);
+	});
 }
 
 // 在iframe内关闭modal弹层
@@ -60,9 +63,7 @@ function modal_show_iframe(title, url, iframe_height_plus) {
 	// 设置iframe要加载的url
 	$(modal_obj).find("iframe").attr("src",url);
 	// 根据加载内容调整iframe高度，并增加iframe_height_plus以做调整
-	$(modal_obj).find("iframe").on("load",function() {
-		iframe_height_fix($(this), iframe_height_plus);
-	});
+	iframe_height_fix($(modal_obj).find("iframe"), iframe_height_plus);
 	// 显示模态框
 	$(modal_obj).modal("show");
 }

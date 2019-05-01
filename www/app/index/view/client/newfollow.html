@@ -9,7 +9,10 @@
 			</div>
 			<div class="form-group">
 				<label class="control-label">跟进时间</label>
-				<input class="form-control" type="text" id="follow-time"/>
+				<div class="input-append date form_datetime">
+				    <input id="follow-time" type="text" style="width:90%"/>
+				    <span class="add-on"><i class="fa fa-calendar"></i></span>
+				</div>
 			</div>
 			<div class="form-group">
 				<label class="control-label">跟进方式</label>
@@ -51,14 +54,27 @@
 	</form>
 </div>
 {/block}
-{block name="script"}
 
+{block name="css"}
+{include file="common@include:css-bootstrap3-datetimepicker"/}
+{/block}
+
+{block name="script"}
+{include file="common@include:js-bootstrap3-datetimepicker"/}
 <script type="text/javascript">
 	$(function() {
 	    //Flat green color scheme for iCheck
 	    $('input[type="checkbox"].flat-green, input[type="radio"].flat-green').iCheck({
 	    	checkboxClass: 'icheckbox_flat-green',
 	    	radioClass   : 'iradio_flat-green'
+	    });
+	    // follow-time的datetimepicker
+	    $(".form_datetime").datetimepicker({
+	    	format: 'yyyy-mm-dd hh:ii',
+	    	autoclose: true,
+	    	todayBtn: true,
+	    	language: 'zh-CN',
+	    	todayHighlight: true,
 	    });
 	});
 </script>
